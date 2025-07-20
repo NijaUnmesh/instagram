@@ -5,7 +5,7 @@
 }
 html, body {
   height: 100%;
-  overflow: hidden; /*  🔒 Prevent vertical scroll  */
+   overflow: hidden;  /*🔒 Prevent vertical scroll  */
 }
 
 .logo{
@@ -129,25 +129,48 @@ html, body {
     padding: 5px 10px 5px 30px;
 }
 .ci{
-    width: 90px;
-    height: 90px;
+    position: absolute;
+    width: 88px;
+    height: 88px;
     border-radius: 50%;
     background-color: whitesmoke;
     overflow: hidden;
-    /* padding: 4px; */
+    z-index: 1;
 }
-.cii{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: conic-gradient(#f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
-    border: 2px solid rgb(205, 83, 103);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    /* padding: 4px; */
+.ci:hover{
+    box-shadow: 0 0 20px 5px rgba(255,105,180,0.5);
+    transition: 0.3s;
 }
+.cii {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ci img{
+transition: transform 0.5s ease;
+}
+.ci:hover img{
+    transform: scale(1.1);
+}
+.border-spin {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(#f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin{
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
+}
+
 .ciii{
     margin-top: 6px;
     width: 90px;
@@ -217,4 +240,87 @@ html, body {
     display: flex;
     margin-left: 15px;
     margin-top: 15px;
+}
+#first{
+    position: relative;
+}
+.second{
+    position: absolute;
+    top: -30px;        /* Align vertically with first post */
+    left: 300px;   /* Push right (width + margin of first post) */
+}
+.pic1{
+    margin-top: 25px; 
+    border-radius: 15%;
+    width: 380px;
+    height: 350px;
+    background-color: white;
+}
+.picparent1{
+    display: flex;   
+}
+.pict1{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    overflow: hidden;
+    /* margin-left: 10px; */
+}
+.image1{
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 340px;
+    height: 200px;
+    border-radius: 10%;
+    background-color: #bc1888;
+    overflow: hidden;
+}
+.grp12icon{
+    margin-right: 20px;
+}
+.third{
+    position: absolute;
+    top: 342px;
+    right: 561px;
+    left: 299px;
+}
+.fourth{
+    position: absolute;
+    top: -33px;
+    left: 700px;
+}
+.fifth{
+    position: absolute;
+    top: 291px;
+    left: 701px;
+}
+.six{
+    position: absolute;
+    top: -10px;
+    right: -40px;
+}
+.new input::placeholder{
+    color: white;
+}
+.new input{
+     background: conic-gradient(#f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+}
+.feed{
+    box-shadow: 0 100px 200px rgba(19, 20, 19, 0.1);
+    transition: all 0.3s ease;
+}
+.feed:hover{
+     transform: scale(1.03);
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.toggle i{
+    font-size: 24px;
+    color: gray;
+    transition: transform 0.3s ease,color 0.3s ease;
+}
+.toggle input:checked+i{
+    color: red;
+    transform: scale(1.3);
 }
